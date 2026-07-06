@@ -369,7 +369,7 @@ body {
 }
 
 .medical {
-  padding: 96px 0 96px;
+  padding: 96px 0 108px;
 }
 
 .medical-lead {
@@ -390,7 +390,7 @@ body {
 
 .medical-cards li {
   overflow: hidden;
-  min-height: 430px;
+  min-height: 470px;
   border: 1px solid var(--color-line);
   border-radius: 12px;
   background: #ffffff;
@@ -403,20 +403,20 @@ body {
 }
 
 .medical-card-body {
-  padding: 30px 24px 22px;
+  padding: 32px 24px 24px;
 }
 
 .medical-card-body h3 {
   color: #333333;
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 900;
   line-height: 1.35;
 }
 
 .medical-card-body p {
-  margin-top: 26px;
+  margin-top: 32px;
   color: #4a4a4a;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 1.45;
 }
@@ -474,7 +474,7 @@ body {
 }
 
 .staff {
-  padding: 98px 0 108px;
+  padding: 98px 0 90px;
 }
 
 .staff-list {
@@ -491,12 +491,40 @@ body {
   line-height: 1.4;
 }
 
-.staff-list img {
+.staff-photo {
+  display: block;
+  overflow: hidden;
   width: 150px;
   height: 150px;
   margin: 0 auto;
   border-radius: 50%;
+}
+
+.staff-photo img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  transform: scale(1.2);
+}
+
+.staff-list li:nth-child(1) .staff-photo img {
+  object-position: 76% 40%;
+  transform: scale(1.18);
+}
+
+.staff-list li:nth-child(2) .staff-photo img {
+  object-position: 70% 44%;
+  transform: scale(1.18);
+}
+
+.staff-list li:nth-child(3) .staff-photo img {
+  object-position: 54% 44%;
+  transform: scale(1.28);
+}
+
+.staff-list li:nth-child(4) .staff-photo img {
+  object-position: 8% 46%;
+  transform: scale(1.18);
 }
 
 .staff-position {
@@ -536,7 +564,7 @@ body {
 
 /* アクセス */
 .access {
-  padding: 96px 0 96px;
+  padding: 96px 0 40px;
 }
 
 .access-layout {
@@ -544,7 +572,7 @@ body {
   grid-template-columns: 560px 1fr;
   gap: 64px;
   align-items: center;
-  margin-top: 64px;
+  margin-top: 30px;
 }
 
 .map-image img {
