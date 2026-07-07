@@ -329,42 +329,43 @@ body {
 }
 
 .message {
-  padding: 56px 0 104px;
+  padding: 60px 0 108px;
 }
 
 .section-inner-message {
-  width: 960px;
+  width: 1100px;
 }
 
 .message-layout {
   display: grid;
-  grid-template-columns: 380px 1fr;
-  gap: 80px;
-  align-items: center;
-  margin-top: 48px;
+  grid-template-columns: 392px 586px;
+  gap: 122px;
+  align-items: start;
+  margin-top: 46px;
 }
 
 .message-image img {
-  width: 385px;
+  width: 392px;
   height: 466px;
   object-fit: cover;
-  object-position: 82% center;
+  object-position: 79% center;
 }
 
 .message-text {
-  padding-top: 22px;
+  max-width: 586px;
+  padding-top: 16px;
   color: #4a4a4a;
   font-size: 16px;
-  font-weight: 700;
-  line-height: 1.45;
+  font-weight: 500;
+  line-height: 1.58;
 }
 
 .message-text p + p {
-  margin-top: 20px;
+  margin-top: 18px;
 }
 
 .message-text .signature {
-  margin-top: 28px;
+  margin-top: 24px;
   text-align: right;
 }
 
@@ -390,7 +391,7 @@ body {
 
 .medical-cards li {
   overflow: hidden;
-  min-height: 504px;
+  min-height: 530px;
   border: 1px solid var(--color-line);
   border-radius: 12px;
   background: #ffffff;
@@ -418,7 +419,7 @@ body {
   color: #4a4a4a;
   font-size: 16px;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 1.55;
 }
 
 .about {
@@ -474,21 +475,21 @@ body {
 }
 
 .staff {
-  padding: 98px 0 90px;
+  padding: 72px 0 64px;
 }
 
 .staff-list {
   display: grid;
-  grid-template-columns: repeat(4, 230px);
-  gap: 63px;
+  grid-template-columns: repeat(4, 228px);
+  gap: 64px;
   margin-top: 70px;
 }
 
 .staff-list > li {
   color: #333333;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .staff-photo {
@@ -537,26 +538,26 @@ body {
 }
 
 .staff-position {
-  margin-top: 28px;
+  margin-top: 24px;
   color: var(--color-main);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   text-align: center;
 }
 
 .staff-list h3 {
-  margin-top: 16px;
-  font-size: 21px;
+  margin-top: 12px;
+  font-size: 20px;
   font-weight: 900;
   text-align: center;
 }
 
 .staff-list dl {
-  margin-top: 22px;
+  margin-top: 18px;
 }
 
 .staff-list dt {
-  margin-top: 20px;
+  margin-top: 18px;
   font-weight: 800;
 }
 
@@ -566,6 +567,7 @@ body {
 
 .staff-list dd {
   color: #454545;
+  line-height: 1.55;
 }
 
 /* 診療時間 */
@@ -573,15 +575,15 @@ body {
 
 /* アクセス */
 .access {
-  padding: 96px 0 40px;
+  padding: 96px 0 106px;
 }
 
 .access-layout {
   display: grid;
   grid-template-columns: 560px 1fr;
-  gap: 64px;
+  gap: 60px;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 34px;
 }
 
 .map-image img {
@@ -594,8 +596,8 @@ body {
 
 .access-card {
   width: 553px;
-  min-height: 250px;
-  padding: 32px 32px 30px;
+  min-height: 246px;
+  padding: 30px 32px 28px;
   border-radius: 12px;
   background: #ffffff;
 }
@@ -626,7 +628,7 @@ body {
   justify-content: center;
   width: 270px;
   height: 46px;
-  margin-top: 22px;
+  margin-top: 20px;
   border-radius: 999px;
   background: var(--color-main);
   color: #ffffff;
@@ -644,7 +646,7 @@ body {
 .footer-inner {
   display: grid;
   grid-template-columns: 175px 320px 210px 1fr;
-  gap: 68px;
+  gap: 52px;
   align-items: center;
   width: var(--content-width);
   height: 184px;
@@ -658,9 +660,9 @@ body {
 
 .footer-contact {
   color: #ffffff;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
-  line-height: 1.65;
+  line-height: 1.55;
 }
 
 .footer-contact li {
@@ -685,9 +687,9 @@ body {
 
 .copyright {
   align-self: end;
-  padding-bottom: 30px;
+  padding-bottom: 24px;
   color: rgba(255, 255, 255, 0.78);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
   text-align: right;
   white-space: nowrap;
