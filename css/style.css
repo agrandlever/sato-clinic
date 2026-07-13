@@ -50,7 +50,7 @@ table {
 
 /* CSS変数 */
 :root {
-  --color-main: #2f9588;
+  --color-main: #2f8f83;
   --color-main-dark: #278478;
   --color-accent: #46aac8;
   --color-text: #333333;
@@ -58,7 +58,7 @@ table {
   --color-line: #dce8e7;
   --color-bg: #ffffff;
   --color-bg-mint: #eaf6f3;
-  --color-bg-soft: #f4f8f8;
+  --color-bg-soft: #f5f7f7;
   --content-width: 1180px;
   --content-narrow: 860px;
 }
@@ -191,16 +191,18 @@ body {
 }
 
 .hero h1 {
-  margin-left: -24px;
+  margin-left: -50px;
   color: var(--color-accent);
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 900;
   line-height: 1.45;
+  -webkit-text-stroke: 4px rgba(255, 255, 255, 0.9);
+  paint-order: stroke fill;
 }
 
 /* 各セクション */
 .hours {
-  padding: 96px 0 96px;
+  padding: 96px 0 94px;
 }
 
 .hours-table {
@@ -257,7 +259,7 @@ body {
   background: #f5f7f7;
   color: #5c5c5c;
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.75;
 }
 
@@ -289,7 +291,7 @@ body {
 }
 
 .news {
-  padding: 96px 0 106px;
+  padding: 96px 0 79px;
 }
 
 .news-layout {
@@ -297,7 +299,7 @@ body {
   grid-template-columns: 420px 1fr;
   gap: 68px;
   align-items: start;
-  margin-top: 60px;
+  margin-top: 63px;
 }
 
 .news-image img {
@@ -329,34 +331,34 @@ body {
 }
 
 .message {
-  padding: 60px 0 108px;
+  padding: 60px 0 96px;
 }
 
 .section-inner-message {
-  width: 1100px;
+  width: 1110px;
 }
 
 .message-layout {
   display: grid;
-  grid-template-columns: 392px 586px;
-  gap: 122px;
+  grid-template-columns: 385px 585px;
+  gap: 140px;
   align-items: start;
-  margin-top: 46px;
+  margin-top: 87px;
 }
 
 .message-image img {
-  width: 392px;
+  width: 385px;
   height: 466px;
   object-fit: cover;
   object-position: 79% center;
 }
 
 .message-text {
-  max-width: 586px;
+  max-width: 585px;
   padding-top: 16px;
   color: #4a4a4a;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.58;
 }
 
@@ -370,7 +372,7 @@ body {
 }
 
 .medical {
-  padding: 96px 0 108px;
+  padding: 96px 0 96px;
 }
 
 .medical-lead {
@@ -386,12 +388,12 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 240px);
   gap: 70px;
-  margin-top: 48px;
+  margin-top: 51px;
 }
 
 .medical-cards li {
   overflow: hidden;
-  min-height: 530px;
+  min-height: 504px;
   border: 1px solid var(--color-line);
   border-radius: 12px;
   background: #ffffff;
@@ -410,7 +412,7 @@ body {
 .medical-card-body h3 {
   color: #333333;
   font-size: 19px;
-  font-weight: 900;
+  font-weight: 700;
   line-height: 1.35;
 }
 
@@ -418,12 +420,12 @@ body {
   margin-top: 32px;
   color: #4a4a4a;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.55;
 }
 
 .about {
-  padding: 96px 0 110px;
+  padding: 96px 0 97px;
 }
 
 .about-layout {
@@ -431,7 +433,7 @@ body {
   grid-template-columns: 520px 1fr;
   gap: 66px;
   align-items: center;
-  margin-top: 54px;
+  margin-top: 51px;
 }
 
 .about-main-image img {
@@ -464,7 +466,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 371px);
   gap: 33px;
-  margin-top: 58px;
+  margin-top: 48px;
 }
 
 .clinic-gallery img {
@@ -475,21 +477,21 @@ body {
 }
 
 .staff {
-  padding: 72px 0 64px;
+  padding: 98px 0 116px;
 }
 
 .staff-list {
   display: grid;
-  grid-template-columns: repeat(4, 228px);
-  gap: 64px;
-  margin-top: 70px;
+  grid-template-columns: repeat(4, 230px);
+  gap: 63px;
+  margin-top: 77px;
 }
 
 .staff-list > li {
   color: #333333;
   font-size: 14px;
-  font-weight: 500;
-  line-height: 1.5;
+  font-weight: 400;
+  line-height: 1.4;
 }
 
 .staff-photo {
@@ -538,17 +540,17 @@ body {
 }
 
 .staff-position {
-  margin-top: 24px;
+  margin-top: 16px;
   color: var(--color-main);
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 400;
   text-align: center;
 }
 
 .staff-list h3 {
   margin-top: 12px;
   font-size: 20px;
-  font-weight: 900;
+  font-weight: 400;
   text-align: center;
 }
 
@@ -558,7 +560,7 @@ body {
 
 .staff-list dt {
   margin-top: 18px;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .staff-list dt:first-child {
@@ -567,7 +569,7 @@ body {
 
 .staff-list dd {
   color: #454545;
-  line-height: 1.55;
+  line-height: 1.4;
 }
 
 /* 診療時間 */
@@ -575,15 +577,15 @@ body {
 
 /* アクセス */
 .access {
-  padding: 96px 0 106px;
+  padding: 96px 0 98px;
 }
 
 .access-layout {
   display: grid;
   grid-template-columns: 560px 1fr;
-  gap: 60px;
+  gap: 64px;
   align-items: center;
-  margin-top: 34px;
+  margin-top: 50px;
 }
 
 .map-image img {
@@ -596,8 +598,8 @@ body {
 
 .access-card {
   width: 553px;
-  min-height: 246px;
-  padding: 30px 32px 28px;
+  min-height: 250px;
+  padding: 32px 32px 30px;
   border-radius: 12px;
   background: #ffffff;
 }
@@ -605,7 +607,7 @@ body {
 .access-card h3 {
   color: #333333;
   font-size: 25px;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .access-card p {
@@ -619,7 +621,7 @@ body {
 .access-card strong {
   color: #333333;
   font-size: 20px;
-  font-weight: 900;
+  font-weight: 500;
 }
 
 .map-button {
@@ -628,7 +630,7 @@ body {
   justify-content: center;
   width: 270px;
   height: 46px;
-  margin-top: 20px;
+  margin-top: 22px;
   border-radius: 999px;
   background: var(--color-main);
   color: #ffffff;
@@ -646,10 +648,10 @@ body {
 .footer-inner {
   display: grid;
   grid-template-columns: 175px 320px 210px 1fr;
-  gap: 52px;
+  gap: 68px;
   align-items: center;
   width: var(--content-width);
-  height: 184px;
+  height: 194px;
   margin: 0 auto;
 }
 
@@ -660,9 +662,9 @@ body {
 
 .footer-contact {
   color: #ffffff;
-  font-size: 13px;
-  font-weight: 500;
-  line-height: 1.55;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.65;
 }
 
 .footer-contact li {
@@ -687,9 +689,9 @@ body {
 
 .copyright {
   align-self: end;
-  padding-bottom: 24px;
+  padding-bottom: 30px;
   color: rgba(255, 255, 255, 0.78);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
   text-align: right;
   white-space: nowrap;
