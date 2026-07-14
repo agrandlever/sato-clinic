@@ -3,9 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>news.html</title>
+    <meta name="description" content="佐藤医院からのお知らせをご案内します。" />
+    <title>お知らせ | 佐藤医院</title>
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
-  <body>
-    <p>news.html</p>
+  <body class="subpage">
+    <a class="skip-link" href="#main-content">本文へ移動</a>
+    <header class="site-header subpage-header">
+      <div class="header-inner">
+        <a class="site-logo" href="./index.html" aria-label="佐藤医院 トップページ">
+          <img src="./img/Logo/logo.png" alt="佐藤医院 Sato Clinic" />
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="global-nav" aria-label="メニューを開く">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="global-nav" id="global-nav" aria-label="グローバルナビゲーション">
+          <ul>
+            <li><a href="./index.html#hours">診療時間</a></li>
+            <li><a href="./news.html" aria-current="page">お知らせ</a></li>
+            <li><a href="./index.html#message">院長挨拶</a></li>
+            <li><a href="./medical.html">診療内容</a></li>
+            <li><a href="./about.html">当院について</a></li>
+            <li><a href="./access.html">アクセス</a></li>
+          </ul>
+        </nav>
+        <a class="header-contact" href="mailto:info@sato-clinic-test.jp">お問い合わせ</a>
+      </div>
+    </header>
+    <main id="main-content">
+      <header class="page-hero">
+        <h1>お知らせ</h1>
+        <p>news</p>
+      </header>
+      <div class="page-content" data-news-page>
+        <noscript>お知らせを表示するにはJavaScriptを有効にしてください。</noscript>
+      </div>
+    </main>
+    <footer class="site-footer compact-footer">
+      <div class="footer-inner">
+        <div class="footer-logo"><img src="./img/Logo/logo.png" alt="佐藤医院 Sato Clinic" /></div>
+        <address class="footer-contact"><ul><li>電話番号：00-0000-0000</li><li>FAX：00-0000-0000</li><li>メール：info@sato-clinic-test.jp</li></ul></address>
+        <nav class="footer-nav" aria-label="フッターナビゲーション"><ul><li><a href="./index.html">トップ</a></li><li><a href="./medical.html">診療内容</a></li><li><a href="./about.html">当院について</a></li><li><a href="./access.html">アクセス</a></li></ul></nav>
+        <p class="copyright">&copy; Sato Clinic All Rights Reserved.</p>
+      </div>
+    </footer>
+    <script src="./js/news-data.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>

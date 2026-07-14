@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">本文へ移動</a>
     <header class="site-header">
       <div class="header-inner">
         <a
@@ -20,7 +21,20 @@
         >
           <img src="./img/Logo/logo.png" alt="佐藤医院 Sato Clinic" />
         </a>
-        <nav class="global-nav" aria-label="グローバルナビゲーション">
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="global-nav"
+          aria-label="メニューを開く"
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <nav
+          class="global-nav"
+          id="global-nav"
+          aria-label="グローバルナビゲーション"
+        >
           <ul>
             <li><a href="#hours">診療時間</a></li>
             <li><a href="#news">お知らせ</a></li>
@@ -36,7 +50,7 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <section class="hero" aria-label="ファーストビュー">
         <div class="hero-copy">
           <h1>
@@ -51,6 +65,7 @@
             <h2>診療時間</h2>
             <p>medical-hours</p>
           </div>
+          <div class="hours-table-scroll" tabindex="0" aria-label="診療時間表">
           <table class="hours-table">
             <thead>
               <tr>
@@ -87,6 +102,7 @@
               </tr>
             </tbody>
           </table>
+          </div>
           <div class="hours-note">
             <ul>
               <li>受付時間：午前　8:00〜11:00　／　午後　12:00〜17:00</li>
@@ -135,28 +151,31 @@
               />
             </div>
             <div class="news-list-wrap">
-              <ul class="news-list">
+              <ul class="news-list" data-news-list>
                 <li>
-                  <time datetime="2025-10-01">YYYY.MM.DD</time>
-                  <a href="./news.html">インフルエンザ予防接種について</a>
+                  <time datetime="2025-10-01">2025.10.01</time>
+                  <a href="./news.html?id=flu-vaccine">インフルエンザ予防接種について</a>
                 </li>
                 <li>
-                  <time datetime="2025-12-01">YYYY.MM.DD</time>
-                  <a href="./news.html">年末年始の休診について</a>
+                  <time datetime="2025-12-01">2025.12.01</time>
+                  <a href="./news.html?id=year-end-holidays">年末年始の休診について</a>
                 </li>
                 <li>
-                  <time datetime="2025-09-01">YYYY.MM.DD</time>
-                  <a href="./news.html">健康診断のご案内</a>
+                  <time datetime="2025-09-01">2025.09.01</time>
+                  <a href="./news.html?id=health-check">健康診断のご案内</a>
                 </li>
                 <li>
-                  <time datetime="2025-08-01">YYYY.MM.DD</time>
-                  <a href="./news.html">新型コロナウイルス対策について</a>
+                  <time datetime="2025-08-01">2025.08.01</time>
+                  <a href="./news.html?id=covid-19">新型コロナウイルス対策について</a>
                 </li>
                 <li>
-                  <time datetime="2025-07-01">YYYY.MM.DD</time>
-                  <a href="./news.html">オンライン診療の導入について</a>
+                  <time datetime="2025-07-01">2025.07.01</time>
+                  <a href="./news.html?id=online-care">オンライン診療の導入について</a>
                 </li>
               </ul>
+              <p class="section-more section-more-news">
+                <a href="./news.html">お知らせ一覧を見る</a>
+              </p>
             </div>
           </div>
         </div>
@@ -247,6 +266,9 @@
               </div>
             </li>
           </ul>
+          <p class="section-more">
+            <a href="./medical.html">すべての診療内容を見る</a>
+          </p>
         </div>
       </section>
 
@@ -290,6 +312,9 @@
               />
             </li>
           </ul>
+          <p class="section-more">
+            <a href="./about.html">当院について詳しく見る</a>
+          </p>
         </div>
       </section>
 
@@ -400,7 +425,13 @@
           </div>
           <div class="access-layout">
             <div class="map-image">
-              <img src="./img/map.jpg" alt="佐藤医院 周辺地図" />
+              <iframe
+                src="https://www.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8F%B0%E6%9D%B1%E5%8C%BA%E4%B8%8A%E9%87%8E0-0-0&amp;output=embed"
+                title="佐藤医院 周辺地図"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
             </div>
             <address class="access-card">
               <h3>佐藤医院</h3>
@@ -411,7 +442,7 @@
               </p>
               <a
                 class="map-button"
-                href="https://www.google.com/maps"
+                href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8F%B0%E6%9D%B1%E5%8C%BA%E4%B8%8A%E9%87%8E0-0-0"
                 target="_blank"
                 rel="noopener noreferrer"
                 >Google Mapsで見る</a
@@ -447,5 +478,7 @@
         <p class="copyright">&copy; Sato Clinic All Rights Reserved.</p>
       </div>
     </footer>
+    <script src="./js/news-data.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
