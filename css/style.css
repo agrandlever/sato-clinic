@@ -1,0 +1,1590 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap");
+
+/* リセットCSS・共通設定 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+dl,
+dt,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+address {
+  font-style: normal;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* CSS変数 */
+:root {
+  --color-main: #2f8f83;
+  --color-main-dark: #278478;
+  --color-accent: #46aac8;
+  --color-text: #333333;
+  --color-muted: #656565;
+  --color-line: #dce8e7;
+  --color-bg: #ffffff;
+  --color-bg-mint: #eaf6f3;
+  --color-bg-soft: #f5f7f7;
+  --content-width: 1180px;
+  --content-narrow: 860px;
+}
+
+/* ベーススタイル */
+body {
+  min-width: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: "Noto Sans JP", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.65;
+  letter-spacing: 0;
+}
+
+/* 共通レイアウト */
+.section-inner {
+  width: min(var(--content-width), calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.section-inner-narrow {
+  width: min(var(--content-narrow), calc(100% - 48px));
+}
+
+.section-white {
+  background: #ffffff;
+}
+
+.section-mint {
+  background: var(--color-bg-mint);
+}
+
+.section-soft {
+  background: var(--color-bg-soft);
+}
+
+.section-heading {
+  text-align: center;
+}
+
+.section-heading h2 {
+  color: #333333;
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.section-heading p {
+  margin-top: 8px;
+  color: var(--color-main);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* ヘッダー */
+.site-header {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 88px;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  width: var(--content-width);
+  height: 100%;
+  margin: 0 auto;
+}
+
+.site-logo {
+  display: block;
+  width: 143px;
+  margin-right: 174px;
+}
+
+.site-logo img {
+  width: 143px;
+  height: auto;
+}
+
+.global-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.global-nav a {
+  color: #333333;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  -webkit-text-stroke: 2px #ffffff;
+  paint-order: stroke fill;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.header-contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 168px;
+  height: 48px;
+  margin-left: auto;
+  border-radius: 999px;
+  background: var(--color-main);
+  color: #ffffff;
+  font-size: 19px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+/* ファーストビュー */
+.hero {
+  position: relative;
+  height: 620px;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.64) 0%,
+      rgba(255, 255, 255, 0.64) 10%,
+      rgba(255, 255, 255, 0) 30%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.16) 0%,
+      rgba(0, 0, 0, 0) 40%
+    ),
+    url("../img/Doctor_Image/firstView.jpg") center top / cover no-repeat;
+}
+
+.hero-copy {
+  position: absolute;
+  top: 274px;
+  left: 50%;
+  width: var(--content-width);
+  transform: translateX(-50%);
+}
+
+.hero h1 {
+  margin-left: -50px;
+  color: var(--color-accent);
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 1.45;
+  -webkit-text-stroke: 4px rgba(255, 255, 255, 0.9);
+  paint-order: stroke fill;
+}
+
+/* 各セクション */
+.hours {
+  padding: 96px 0 94px;
+}
+
+.hours-table {
+  overflow: hidden;
+  width: 860px;
+  margin-top: 50px;
+  border: 2px solid var(--color-line);
+  border-radius: 16px;
+  color: #222222;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.hours-table th,
+.hours-table td {
+  width: 100px;
+  height: 56px;
+  border-right: 2px solid var(--color-line);
+  border-bottom: 2px solid var(--color-line);
+  text-align: center;
+  vertical-align: middle;
+}
+
+.hours-table thead th {
+  background: var(--color-bg-mint);
+  font-weight: 900;
+}
+
+.hours-table th:first-child {
+  width: 160px;
+}
+
+.hours-table tbody th {
+  background: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.hours-table tr:last-child th,
+.hours-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.hours-table th:last-child,
+.hours-table td:last-child {
+  border-right: 0;
+}
+
+.hours-note {
+  width: 860px;
+  max-width: 100%;
+  margin-top: 48px;
+  padding: 24px 22px 22px;
+  border-radius: 6px;
+  background: #f5f7f7;
+  color: #5c5c5c;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.75;
+}
+
+.hours-note li {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+.hours-note li::before {
+  content: "・";
+}
+
+.photo-band {
+  padding: 88px 0;
+  background: var(--color-bg-soft);
+}
+
+.photo-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.photo-list img {
+  width: 372px;
+  height: 240px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.news {
+  padding: 96px 0 79px;
+}
+
+.news-layout {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 68px;
+  align-items: start;
+  margin-top: 63px;
+}
+
+.news-image img {
+  width: 420px;
+  height: 300px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.news-image {
+  margin-top: 14px;
+}
+
+.news-list {
+  padding-top: 4px;
+}
+
+.news-list li {
+  display: grid;
+  grid-template-columns: 126px 1fr;
+  align-items: center;
+  height: 64px;
+  border-bottom: 1px solid var(--color-line);
+  color: #333333;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.news-list time {
+  color: var(--color-main);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.message {
+  padding: 60px 0 96px;
+}
+
+.section-inner-message {
+  width: 1110px;
+}
+
+.message-layout {
+  display: grid;
+  grid-template-columns: 385px 585px;
+  gap: 140px;
+  align-items: start;
+  margin-top: 87px;
+}
+
+.message-image img {
+  width: 385px;
+  height: 466px;
+  object-fit: cover;
+  object-position: 79% center;
+}
+
+.message-text {
+  max-width: 585px;
+  padding-top: 16px;
+  color: #4a4a4a;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.58;
+}
+
+.message-text p + p {
+  margin-top: 18px;
+}
+
+.message-text .signature {
+  margin-top: 24px;
+  text-align: right;
+}
+
+.medical {
+  padding: 96px 0 96px;
+}
+
+.medical-lead {
+  margin-top: 58px;
+  color: var(--color-accent);
+  font-size: 25px;
+  font-weight: 900;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.medical-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 240px);
+  gap: 70px;
+  margin-top: 51px;
+}
+
+.medical-cards li {
+  overflow: hidden;
+  height: 504px;
+  border: 1px solid var(--color-line);
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.medical-cards img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.medical-card-body {
+  padding: 32px 24px 24px;
+}
+
+.medical-card-body h3 {
+  color: #333333;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.medical-card-body p {
+  margin-top: 32px;
+  color: #4a4a4a;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.about {
+  padding: 96px 0 97px;
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 520px 1fr;
+  gap: 66px;
+  align-items: center;
+  margin-top: 51px;
+}
+
+.about-main-image img {
+  width: 520px;
+  height: 340px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.about-text {
+  padding: 8px 40px 0 0;
+}
+
+.about-text h3 {
+  color: #333333;
+  font-size: 26px;
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+.about-text p {
+  margin-top: 26px;
+  color: #333333;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.clinic-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 371px);
+  gap: 33px;
+  margin-top: 48px;
+}
+
+.clinic-gallery img {
+  width: 371px;
+  height: 179px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.staff {
+  padding: 98px 0 116px;
+}
+
+.staff-list {
+  display: grid;
+  grid-template-columns: repeat(4, 230px);
+  gap: 63px;
+  margin-top: 77px;
+}
+
+.staff-list > li {
+  color: #333333;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.staff-photo {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.staff-photo img {
+  position: absolute;
+  display: block;
+  max-width: none;
+  object-fit: fill;
+}
+
+.staff-list li:nth-child(1) .staff-photo img {
+  top: -21.3482%;
+  left: -174.499%;
+  width: 336.1747%;
+  height: 192.0998%;
+}
+
+.staff-list li:nth-child(2) .staff-photo img {
+  top: -7.9167%;
+  left: -140.686%;
+  width: 265.4169%;
+  height: 151.6668%;
+}
+
+.staff-list li:nth-child(3) .staff-photo img {
+  top: -4.4897%;
+  left: -77.632%;
+  width: 252.1742%;
+  height: 144.0995%;
+}
+
+.staff-list li:nth-child(4) .staff-photo img {
+  top: 0.0599%;
+  left: -18.9213%;
+  width: 288.6455%;
+  height: 164.9403%;
+}
+
+.staff-position {
+  margin-top: 16px;
+  color: var(--color-main);
+  font-size: 13px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.staff-list h3 {
+  margin-top: 12px;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.staff-list dl {
+  margin-top: 18px;
+}
+
+.staff-list dt {
+  margin-top: 18px;
+  font-weight: 700;
+}
+
+.hours-table-scroll {
+  max-width: 100%;
+}
+
+.staff-list dt:first-child {
+  margin-top: 0;
+}
+
+.staff-list dd {
+  color: #454545;
+  line-height: 1.4;
+}
+
+/* 診療時間 */
+/* 診療時間固有のスタイルは .hours および .hours-table に記載 */
+
+/* アクセス */
+.access {
+  padding: 96px 0 98px;
+}
+
+.access-layout {
+  display: grid;
+  grid-template-columns: 560px 1fr;
+  gap: 64px;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.map-image img {
+  width: 559px;
+  height: 359px;
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+.map-image iframe {
+  display: block;
+  width: 559px;
+  height: 359px;
+  border: 0;
+  border-radius: 12px;
+}
+
+.access-card {
+  width: 553px;
+  min-height: 250px;
+  padding: 32px 32px 30px;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.access-card h3 {
+  color: #333333;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.access-card p {
+  margin-top: 17px;
+  color: #4c4c4c;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.access-card strong {
+  color: #333333;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.map-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 270px;
+  height: 46px;
+  margin-top: 22px;
+  border-radius: 999px;
+  background: var(--color-main);
+  color: #ffffff;
+  font-size: 23px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+/* フッター */
+.site-footer {
+  background: var(--color-main);
+  color: #ffffff;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 175px 320px 210px 1fr;
+  gap: 68px;
+  align-items: center;
+  width: min(var(--content-width), calc(100% - 48px));
+  height: 194px;
+  margin: 0 auto;
+}
+
+.footer-logo img {
+  width: 175px;
+  height: auto;
+}
+
+.footer-contact {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+.footer-contact li {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+.footer-contact li::before {
+  content: "・";
+}
+
+.footer-nav ul {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  column-gap: 48px;
+  row-gap: 2px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.copyright {
+  align-self: end;
+  padding-bottom: 30px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 13px;
+  font-weight: 500;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* 共通インタラクション */
+.skip-link {
+  position: fixed;
+  z-index: 1000;
+  top: 12px;
+  left: 12px;
+  padding: 10px 16px;
+  border-radius: 6px;
+  background: #ffffff;
+  color: var(--color-main-dark);
+  font-weight: 700;
+  transform: translateY(-160%);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+a,
+button {
+  transition: color 0.2s ease, background-color 0.2s ease, opacity 0.2s ease,
+    transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.global-nav a:hover,
+.global-nav a[aria-current="page"],
+.footer-nav a:hover,
+.news-list a:hover {
+  color: var(--color-main);
+}
+
+.site-footer .footer-nav a:hover {
+  color: #ffffff;
+  opacity: 0.72;
+}
+
+.header-contact:hover,
+.map-button:hover,
+.primary-button:hover,
+.section-more a:hover {
+  background: var(--color-main-dark);
+  box-shadow: 0 6px 18px rgba(39, 132, 120, 0.24);
+  transform: translateY(-2px);
+}
+
+a:focus-visible,
+button:focus-visible,
+.hours-table-scroll:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+.section-more {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.section-more-news {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.section-more a,
+.primary-button {
+  display: inline-flex;
+  min-width: 250px;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  border-radius: 999px;
+  background: var(--color-main);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+/* 下層ページ */
+.subpage {
+  background: var(--color-bg-soft);
+}
+
+.subpage-header {
+  position: relative;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 1px 10px rgba(30, 70, 65, 0.08);
+}
+
+.page-hero {
+  padding: 72px 24px 68px;
+  background: var(--color-bg-mint);
+  text-align: center;
+}
+
+.page-hero h1 {
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.page-hero p {
+  margin-top: 8px;
+  color: var(--color-main);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.page-content {
+  width: min(960px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 80px 0 104px;
+}
+
+.page-lead {
+  margin-bottom: 52px;
+  color: var(--color-accent);
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.news-archive,
+.news-article,
+.text-section,
+.contact-panel,
+.detail-section {
+  padding: 40px;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.news-archive li {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.news-archive li:first-child {
+  padding-top: 0;
+}
+
+.news-archive li:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.news-archive time,
+.news-article time {
+  color: var(--color-main);
+  font-weight: 700;
+}
+
+.news-archive a {
+  font-weight: 700;
+}
+
+.news-archive a:hover {
+  color: var(--color-main);
+}
+
+.news-article h1 {
+  margin-top: 14px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--color-line);
+  font-size: 30px;
+  line-height: 1.4;
+}
+
+.news-article p {
+  margin-top: 28px;
+  color: #454545;
+  line-height: 1.9;
+}
+
+.page-back-link {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.page-back-link a {
+  color: var(--color-main);
+  font-weight: 700;
+}
+
+.service-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.service-detail-grid article {
+  overflow: hidden;
+  border: 1px solid var(--color-line);
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.service-detail-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.service-detail-grid article > div {
+  padding: 30px;
+}
+
+.service-detail-grid h2,
+.text-section h2,
+.feature-section h2,
+.information-columns h2,
+.contact-panel h2,
+.detail-access-layout h2 {
+  font-size: 23px;
+  line-height: 1.4;
+}
+
+.service-detail-grid p,
+.text-section p,
+.feature-section p,
+.information-columns p,
+.contact-panel p {
+  margin-top: 18px;
+  color: #4a4a4a;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+.contact-panel {
+  margin-top: 48px;
+  background: var(--color-bg-mint);
+  text-align: center;
+}
+
+.contact-panel .primary-button {
+  margin-top: 24px;
+}
+
+.feature-section {
+  display: grid;
+  grid-template-columns: 46% 1fr;
+  gap: 48px;
+  align-items: center;
+  padding: 40px;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.feature-section img {
+  width: 100%;
+  height: 320px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.text-section {
+  margin-top: 40px;
+}
+
+.information-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.information-columns section {
+  padding: 30px;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.policy-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.policy-grid div {
+  padding: 20px;
+  border-left: 4px solid var(--color-main);
+  background: var(--color-bg-soft);
+}
+
+.policy-grid strong,
+.policy-grid span {
+  display: block;
+}
+
+.policy-grid span {
+  margin-top: 6px;
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+.detail-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.detail-gallery img {
+  width: 100%;
+  height: 180px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.detail-section + .detail-section {
+  margin-top: 48px;
+}
+
+.detail-section .hours-table {
+  width: 100%;
+}
+
+.detail-section .hours-note {
+  width: 100%;
+}
+
+.detail-access-layout {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.detail-access-layout iframe {
+  width: 100%;
+  height: 400px;
+  border: 0;
+  border-radius: 12px;
+}
+
+.detail-access-layout address {
+  align-self: center;
+}
+
+.detail-access-layout address p {
+  margin-top: 18px;
+}
+
+.detail-access-layout .primary-button {
+  margin-top: 28px;
+}
+
+@media (max-width: 1199px) {
+  .site-logo {
+    margin-right: 48px;
+  }
+
+  .global-nav ul {
+    gap: 18px;
+  }
+
+  .global-nav a {
+    font-size: 13px;
+  }
+
+  .header-contact {
+    width: 145px;
+    font-size: 16px;
+  }
+
+  .section-inner-message {
+    width: min(1000px, calc(100% - 48px));
+  }
+
+  .message-layout {
+    grid-template-columns: 38% 1fr;
+    gap: 64px;
+  }
+
+  .message-image img {
+    width: 100%;
+  }
+
+  .medical-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+  }
+
+  .medical-cards li {
+    height: auto;
+    min-height: 504px;
+  }
+
+  .about-layout,
+  .access-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .clinic-gallery,
+  .staff-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .clinic-gallery img,
+  .map-image iframe {
+    width: 100%;
+  }
+
+  .staff-list {
+    gap: 56px;
+  }
+
+  .access-card {
+    width: 100%;
+  }
+
+  .footer-inner {
+    width: min(var(--content-width), calc(100% - 48px));
+    grid-template-columns: 150px 260px 180px 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 820px) {
+  body {
+    font-size: 15px;
+  }
+
+  body.nav-open {
+    overflow: hidden;
+  }
+
+  .section-inner,
+  .section-inner-narrow,
+  .section-inner-message,
+  .page-content {
+    width: min(calc(100% - 32px), 560px);
+  }
+
+  .section-heading h2 {
+    font-size: 26px;
+  }
+
+  .site-header,
+  .subpage-header {
+    position: absolute;
+    height: 72px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 1px 8px rgba(30, 70, 65, 0.08);
+  }
+
+  .header-inner {
+    position: relative;
+    width: calc(100% - 32px);
+  }
+
+  .site-logo {
+    width: 112px;
+    margin-right: 0;
+  }
+
+  .site-logo img {
+    width: 112px;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    order: 3;
+    width: 44px;
+    height: 44px;
+    margin-left: 8px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--color-bg-mint);
+    cursor: pointer;
+  }
+
+  .nav-toggle span {
+    width: 20px;
+    height: 2px;
+    background: var(--color-main-dark);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .nav-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .nav-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .global-nav {
+    position: absolute;
+    z-index: 20;
+    top: 72px;
+    right: -16px;
+    left: -16px;
+    visibility: hidden;
+    padding: 18px 24px 26px;
+    background: #ffffff;
+    box-shadow: 0 12px 24px rgba(30, 70, 65, 0.16);
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  }
+
+  .global-nav.is-open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .global-nav ul {
+    display: grid;
+    gap: 0;
+  }
+
+  .global-nav a {
+    display: block;
+    padding: 14px 4px;
+    border-bottom: 1px solid var(--color-line);
+    font-size: 16px;
+    -webkit-text-stroke: 0;
+  }
+
+  .header-contact {
+    order: 2;
+    width: 108px;
+    height: 38px;
+    margin-left: auto;
+    font-size: 13px;
+  }
+
+  .hero {
+    height: 520px;
+    background-position: 61% top;
+  }
+
+  .hero-copy {
+    top: 206px;
+    width: calc(100% - 32px);
+  }
+
+  .hero h1 {
+    width: 78%;
+    margin-left: 0;
+    font-size: clamp(20px, 6vw, 25px);
+    line-height: 1.55;
+    -webkit-text-stroke-width: 3px;
+  }
+
+  .hours,
+  .news,
+  .medical,
+  .about,
+  .staff,
+  .access {
+    padding: 72px 0;
+  }
+
+  .hours-table-scroll {
+    overflow-x: auto;
+    margin: 36px -4px 0;
+    padding: 0 4px 8px;
+  }
+
+  .hours-table {
+    width: 700px;
+    min-width: 700px;
+    margin-top: 0;
+    font-size: 15px;
+  }
+
+  .hours-table th,
+  .hours-table td {
+    height: 48px;
+  }
+
+  .hours-note {
+    width: 100%;
+    margin-top: 28px;
+    padding: 20px;
+    font-size: 13px;
+  }
+
+  .photo-band {
+    padding: 56px 0;
+  }
+
+  .photo-list,
+  .news-layout,
+  .message-layout,
+  .about-layout,
+  .clinic-gallery,
+  .staff-list,
+  .access-layout,
+  .service-detail-grid,
+  .feature-section,
+  .information-columns,
+  .policy-grid,
+  .detail-gallery,
+  .detail-access-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-list,
+  .clinic-gallery {
+    gap: 16px;
+  }
+
+  .photo-list img,
+  .clinic-gallery img,
+  .about-main-image img,
+  .map-image iframe {
+    width: 100%;
+    height: auto;
+    min-height: 210px;
+  }
+
+  .news-layout {
+    gap: 32px;
+    margin-top: 40px;
+  }
+
+  .news-image img {
+    width: 100%;
+    height: 230px;
+  }
+
+  .news-image {
+    margin-top: 0;
+  }
+
+  .news-list li {
+    grid-template-columns: 96px 1fr;
+    min-height: 66px;
+    height: auto;
+    padding: 12px 0;
+    font-size: 14px;
+  }
+
+  .section-more-news {
+    text-align: center;
+  }
+
+  .message {
+    padding: 72px 0;
+  }
+
+  .message-layout {
+    gap: 32px;
+    margin-top: 44px;
+  }
+
+  .message-image img {
+    width: 100%;
+    height: 380px;
+  }
+
+  .message-text {
+    max-width: none;
+    padding-top: 0;
+    font-size: 15px;
+  }
+
+  .medical-lead {
+    margin-top: 40px;
+    font-size: 19px;
+  }
+
+  .medical-lead br {
+    display: none;
+  }
+
+  .medical-cards {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 36px;
+  }
+
+  .medical-cards li {
+    min-height: 0;
+  }
+
+  .medical-cards img {
+    height: 210px;
+  }
+
+  .about-layout {
+    gap: 28px;
+    margin-top: 40px;
+  }
+
+  .about-text {
+    padding: 0;
+  }
+
+  .clinic-gallery {
+    margin-top: 32px;
+  }
+
+  .staff-list {
+    gap: 56px;
+    margin-top: 48px;
+  }
+
+  .staff-list > li {
+    max-width: 420px;
+    margin: 0 auto;
+    font-size: 15px;
+  }
+
+  .access-layout {
+    gap: 28px;
+    margin-top: 40px;
+  }
+
+  .access-card {
+    min-height: 0;
+    padding: 28px 24px;
+  }
+
+  .map-button {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    width: calc(100% - 32px);
+    height: auto;
+    padding: 48px 0 28px;
+    text-align: center;
+  }
+
+  .footer-logo img {
+    margin: 0 auto;
+  }
+
+  .footer-contact li {
+    padding-left: 0;
+    text-indent: 0;
+  }
+
+  .footer-contact li::before {
+    content: none;
+  }
+
+  .footer-nav ul {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 24px;
+  }
+
+  .copyright {
+    align-self: auto;
+    padding-bottom: 0;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .subpage-header {
+    position: relative;
+  }
+
+  .page-hero {
+    padding: 58px 16px 52px;
+  }
+
+  .page-hero h1 {
+    font-size: 29px;
+  }
+
+  .page-content {
+    padding: 56px 0 72px;
+  }
+
+  .page-lead {
+    margin-bottom: 36px;
+    font-size: 18px;
+    text-align: left;
+  }
+
+  .news-archive,
+  .news-article,
+  .text-section,
+  .contact-panel,
+  .detail-section,
+  .feature-section {
+    padding: 24px;
+  }
+
+  .news-archive li {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .news-article h1 {
+    font-size: 24px;
+  }
+
+  .service-detail-grid article > div,
+  .information-columns section {
+    padding: 24px;
+  }
+
+  .service-detail-grid img {
+    height: 200px;
+  }
+
+  .feature-section {
+    gap: 28px;
+  }
+
+  .feature-section img {
+    height: 240px;
+  }
+
+  .information-columns {
+    gap: 16px;
+  }
+
+  .detail-gallery img {
+    height: 220px;
+  }
+
+  .detail-section .hours-table-scroll {
+    margin-top: 36px;
+  }
+
+  .detail-access-layout iframe {
+    height: 320px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
