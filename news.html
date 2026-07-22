@@ -5,48 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="佐藤医院からのお知らせをご案内します。" />
     <title>お知らせ | 佐藤医院</title>
+    <link rel="icon" href="./img/Logo/logo.png" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
-  <body class="subpage">
+  <body>
     <a class="skip-link" href="#main-content">本文へ移動</a>
-    <header class="site-header subpage-header">
-      <div class="header-inner">
-        <a class="site-logo" href="./index.html" aria-label="佐藤医院 トップページ">
-          <img src="./img/Logo/logo.png" alt="佐藤医院 Sato Clinic" />
-        </a>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="global-nav" aria-label="メニューを開く">
-          <span></span><span></span><span></span>
-        </button>
-        <nav class="global-nav" id="global-nav" aria-label="グローバルナビゲーション">
-          <ul>
-            <li><a href="./index.html#hours">診療時間</a></li>
-            <li><a href="./news.html" aria-current="page">お知らせ</a></li>
-            <li><a href="./index.html#message">院長挨拶</a></li>
-            <li><a href="./medical.html">診療内容</a></li>
-            <li><a href="./about.html">当院について</a></li>
-            <li><a href="./access.html">アクセス</a></li>
-          </ul>
-        </nav>
-        <a class="header-contact" href="./faq.html">お問い合わせ</a>
-      </div>
-    </header>
+    <header class="site-header"><div class="header-inner">
+      <a class="site-logo" href="./index.html" aria-label="佐藤医院 トップページ"><img src="./img/Logo/logo.png" alt="佐藤医院 Sato Clinic" /></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="global-nav" aria-label="メニューを開く"><span></span><span></span><span></span></button>
+      <nav class="global-nav" id="global-nav" aria-label="グローバルナビゲーション"><ul><li><a href="./access.html#hours">診療時間</a></li><li><a href="./news.html" aria-current="page">お知らせ</a></li><li><a href="./medical.html">診療内容</a></li><li><a href="./about.html">当院について</a></li><li><a href="./access.html">所在地・アクセス</a></li></ul></nav>
+      <a class="header-contact" href="./faq.html">お問い合わせ・FAQ</a>
+    </div></header>
+
     <main id="main-content">
-      <header class="page-hero">
-        <h1>お知らせ</h1>
-        <p>news</p>
-      </header>
-      <div class="page-content" data-news-page>
-        <noscript>お知らせを表示するにはJavaScriptを有効にしてください。</noscript>
+      <header class="page-hero"><div class="page-hero-inner">
+        <div class="page-hero-copy"><ol class="breadcrumbs" aria-label="パンくずリスト"><li><a href="./index.html">トップページ</a></li><li aria-current="page">お知らせ</li></ol><h1>お知らせ</h1></div>
+        <figure class="page-hero-image"><img src="./img/Infomation_Image/information_2.jpg" alt="患者様へのお知らせ" /></figure>
+      </div></header>
+      <div class="page-content section--mint">
+        <div class="container-narrow" data-news-page>
+          <ul class="news-archive" data-news-list>
+            <li><time datetime="2025-10-01">2025.10.01</time><a href="./news.html?id=flu-vaccine">インフルエンザ予防接種について</a></li>
+            <li><time datetime="2024-12-02">2024.12.02</time><a href="./news.html?id=year-end-holidays">年末年始の休診について</a></li>
+            <li><time datetime="2024-06-03">2024.06.03</time><a href="./news.html?id=health-check">健康診断のご案内</a></li>
+            <li><time datetime="2024-02-01">2024.02.01</time><a href="./news.html?id=covid-19">新型コロナウイルス対策について</a></li>
+            <li><time datetime="2024-01-05">2024.01.05</time><a href="./news.html?id=online-care">オンライン診療の導入について</a></li>
+          </ul>
+        </div>
       </div>
     </main>
-    <footer class="site-footer compact-footer">
-      <div class="footer-inner">
-        <div class="footer-logo"><img src="./img/Logo/logo.png" alt="佐藤医院 Sato Clinic" /></div>
-        <address class="footer-contact"><ul><li>電話番号：<a href="tel:0000000000">00-0000-0000</a></li><li>FAX：00-0000-0000</li><li>メール：<a href="mailto:info@sato-clinic-test.jp">info@sato-clinic-test.jp</a></li></ul></address>
-        <nav class="footer-nav" aria-label="フッターナビゲーション"><ul><li><a href="./medical.html">診療内容</a></li><li><a href="./about.html">当院について</a></li><li><a href="./access.html">アクセス</a></li><li><a href="./faq.html">よくあるご質問</a></li></ul></nav>
-        <p class="copyright">&copy; Sato Clinic All Rights Reserved.</p>
-      </div>
-    </footer>
+
+    <footer class="site-footer"><div class="container footer-main">
+      <div class="footer-brand"><img class="footer-logo" src="./img/Logo/logo.png" alt="佐藤医院 Sato Clinic" /><address class="footer-contact">〒123-4567　東京都台東区上野0-0-0<br />電話：<a href="tel:0000000000">00-0000-0000</a><br />FAX：00-0000-0000<br />メール：<a href="mailto:info@sato-clinic-test.jp">info@sato-clinic-test.jp</a></address></div>
+      <nav class="footer-nav" aria-label="フッターナビゲーション"><h2>サイト案内</h2><ul><li><a href="./index.html">トップページ</a></li><li><a href="./news.html">お知らせ</a></li><li><a href="./medical.html">診療内容</a></li><li><a href="./about.html">当院について</a></li><li><a href="./access.html">診療時間・所在地</a></li><li><a href="./faq.html">よくあるご質問</a></li></ul></nav>
+      <div class="footer-info"><h2>診療案内</h2><ul><li>午前　9:00〜12:00</li><li>午後　13:00〜18:00</li><li>休診日：木曜・土曜午後・日曜</li></ul></div>
+    </div><p class="footer-bottom">&copy; Sato Clinic All Rights Reserved.</p></footer>
     <script src="./js/news-data.js"></script>
     <script src="./js/main.js"></script>
   </body>

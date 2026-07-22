@@ -5,73 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="佐藤医院の診療時間、診療科目、所在地、交通アクセス、お問い合わせ先をご案内します。" />
     <title>診療時間・所在地 | 佐藤医院</title>
+    <link rel="icon" href="./img/Logo/logo.png" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
-  <body class="subpage">
+  <body>
     <a class="skip-link" href="#main-content">本文へ移動</a>
-    <header class="site-header subpage-header">
-      <div class="header-inner">
-        <a class="site-logo" href="./index.html" aria-label="佐藤医院 トップページ"><img src="./img/Logo/logo.png" alt="佐藤医院 Sato Clinic" /></a>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="global-nav" aria-label="メニューを開く"><span></span><span></span><span></span></button>
-        <nav class="global-nav" id="global-nav" aria-label="グローバルナビゲーション">
-          <ul>
-            <li><a href="./index.html#hours">診療時間</a></li>
-            <li><a href="./news.html">お知らせ</a></li>
-            <li><a href="./index.html#message">院長挨拶</a></li>
-            <li><a href="./medical.html">診療内容</a></li>
-            <li><a href="./about.html">当院について</a></li>
-            <li><a href="./access.html" aria-current="page">アクセス</a></li>
-          </ul>
-        </nav>
-        <a class="header-contact" href="./faq.html">お問い合わせ</a>
-      </div>
-    </header>
+    <header class="site-header"><div class="header-inner">
+      <a class="site-logo" href="./index.html" aria-label="佐藤医院 トップページ"><img src="./img/Logo/logo.png" alt="佐藤医院 Sato Clinic" /></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="global-nav" aria-label="メニューを開く"><span></span><span></span><span></span></button>
+      <nav class="global-nav" id="global-nav" aria-label="グローバルナビゲーション"><ul><li><a href="./access.html#hours">診療時間</a></li><li><a href="./news.html">お知らせ</a></li><li><a href="./medical.html">診療内容</a></li><li><a href="./about.html">当院について</a></li><li><a href="./access.html" aria-current="page">所在地・アクセス</a></li></ul></nav>
+      <a class="header-contact" href="./faq.html">お問い合わせ・FAQ</a>
+    </div></header>
+
     <main id="main-content">
-      <header class="page-hero"><h1>診療時間・所在地</h1><p>hours &amp; access</p></header>
+      <header class="page-hero"><div class="page-hero-inner">
+        <div class="page-hero-copy"><ol class="breadcrumbs" aria-label="パンくずリスト"><li><a href="./index.html">トップページ</a></li><li aria-current="page">診療時間・所在地</li></ol><h1>診療時間・所在地</h1></div>
+        <figure class="page-hero-image"><img src="./img/Hospital_Exterior/hospital_2.jpg" alt="佐藤医院" /></figure>
+      </div></header>
+
       <div class="page-content">
-        <p class="page-lead">佐藤医院では、患者様のご都合に合わせた診療を提供できるよう、柔軟な診療時間を設けております。以下をご確認のうえ、ご来院の際にご利用ください。</p>
+        <div class="container">
+          <p class="page-intro">佐藤医院では、患者様のご都合に合わせた診療を提供できるよう、柔軟な診療時間を設けております。以下をご確認のうえ、ご来院の際にご利用ください。</p>
 
-        <section class="detail-section">
-          <div class="section-heading"><h2>診療時間</h2><p>medical-hours</p></div>
-          <div class="hours-table-scroll" tabindex="0" aria-label="診療時間表" aria-describedby="access-hours-legend">
-            <table class="hours-table">
-              <thead><tr><th scope="col">時間帯</th><th scope="col">月</th><th scope="col">火</th><th scope="col">水</th><th scope="col">木</th><th scope="col">金</th><th scope="col">土</th><th scope="col">日</th></tr></thead>
-              <tbody>
-                <tr><th scope="row">午前　9:00〜12:00</th><td>●</td><td>●</td><td>●</td><td>／</td><td>●</td><td>●</td><td>／</td></tr>
-                <tr><th scope="row">午後　13:00〜18:00</th><td>●</td><td>●</td><td>●</td><td>／</td><td>●</td><td>／</td><td>／</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="hours-note"><p class="hours-legend" id="access-hours-legend">●＝診療　／＝休診</p><ul><li>受付時間：午前　8:00〜11:00　／　午後　12:00〜17:00</li><li>休診日：木曜・土曜午後・日曜</li><li>※祝祭日も診療を行っておりますが、休診日もございますので、事前にご確認ください。</li></ul></div>
-        </section>
+          <section class="content-card" id="hours" aria-labelledby="hours-title">
+            <header class="section-heading"><h2 id="hours-title">診療時間</h2></header>
+            <div class="hours-layout">
+              <div class="table-scroll" tabindex="0" aria-label="診療時間表。横にスクロールできます" aria-describedby="access-hours-legend">
+                <table class="hours-table"><thead><tr><th scope="col">時間帯</th><th scope="col">月</th><th scope="col">火</th><th scope="col">水</th><th scope="col">木</th><th scope="col">金</th><th scope="col">土</th><th scope="col">日</th></tr></thead><tbody><tr><th scope="row">午前　9:00〜12:00</th><td>●</td><td>●</td><td>●</td><td>／</td><td>●</td><td>●</td><td>／</td></tr><tr><th scope="row">午後　13:00〜18:00</th><td>●</td><td>●</td><td>●</td><td>／</td><td>●</td><td>／</td><td>／</td></tr></tbody></table>
+              </div>
+              <div class="hours-note"><p class="hours-legend" id="access-hours-legend">●＝診療　／＝休診</p><ul><li>受付時間：午前　8:00〜11:00　／　午後　12:00〜17:00</li><li>休診日：木曜・土曜午後・日曜</li><li>※祝祭日も診療を行っておりますが、休診日もございますので、事前にご確認ください。</li></ul></div>
+            </div>
+          </section>
 
-        <section class="text-section">
-          <h2>診療科目</h2>
-          <ul class="detail-list"><li>内科</li><li>循環器科</li><li>呼吸器科</li><li>予防医療・健康診断</li><li>生活習慣病（高血圧、糖尿病等）の治療・管理</li></ul>
-          <p>その他、ご不明点があればお電話またはメールでお問い合わせください。</p>
-        </section>
+          <section class="content-card" aria-labelledby="subjects-title">
+            <h2 id="subjects-title">診療科目</h2>
+            <ul><li>内科</li><li>循環器科</li><li>呼吸器科</li><li>予防医療・健康診断</li><li>生活習慣病（高血圧、糖尿病等）の治療・管理</li></ul>
+            <p>その他、ご不明点があればお電話またはメールでお問い合わせください。</p>
+          </section>
 
-        <section class="detail-section">
-          <div class="section-heading"><h2>所在地</h2><p>location</p></div>
-          <div class="detail-access-layout">
-            <iframe src="https://www.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8F%B0%E6%9D%B1%E5%8C%BA%E4%B8%8A%E9%87%8E0-0-0&amp;output=embed" title="佐藤医院 周辺地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-            <address>
-              <h2>佐藤医院</h2>
-              <p>〒123-4567　東京都台東区上野0-0-0</p>
-              <p>最寄駅：JR上野駅より徒歩5分<br />当院専用の無料駐車場 10台分あり</p>
-              <p>ご来院の際は、交通状況にご注意ください。最寄駅から徒歩5分の便利な立地です。</p>
-              <a class="primary-button" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8F%B0%E6%9D%B1%E5%8C%BA%E4%B8%8A%E9%87%8E0-0-0" target="_blank" rel="noopener noreferrer">Google Mapsで見る</a>
-            </address>
-          </div>
-        </section>
+          <section class="section" aria-labelledby="location-title">
+            <header class="section-heading"><h2 id="location-title">所在地</h2></header>
+            <div class="access-layout">
+              <div class="map-frame"><iframe src="https://www.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8F%B0%E6%9D%B1%E5%8C%BA%E4%B8%8A%E9%87%8E0-0-0&amp;output=embed" title="佐藤医院 周辺地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+              <address class="access-card"><h3>佐藤医院</h3><p>〒123-4567　東京都台東区上野0-0-0</p><p>最寄駅：JR上野駅より徒歩5分<br />当院専用の無料駐車場 10台分あり</p><p>ご来院の際は、交通状況にご注意ください。最寄駅から徒歩5分の便利な立地です。</p><div class="access-actions"><a class="button" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8F%B0%E6%9D%B1%E5%8C%BA%E4%B8%8A%E9%87%8E0-0-0" target="_blank" rel="noopener noreferrer">Google Mapsで見る</a></div></address>
+            </div>
+          </section>
 
-        <section class="contact-panel access-contact">
-          <h2>お問い合わせ</h2>
-          <ul class="detail-list"><li>電話番号：<a href="tel:0000000000">00-0000-0000</a></li><li>FAX：00-0000-0000</li><li>メール：<a href="mailto:info@sato-clinic-test.jp">info@sato-clinic-test.jp</a></li></ul>
-        </section>
+          <section class="content-card" aria-labelledby="contact-title">
+            <h2 id="contact-title">お問い合わせ</h2>
+            <div class="contact-panel"><div><strong>電話番号</strong><a href="tel:0000000000">00-0000-0000</a></div><div><strong>FAX</strong><span>00-0000-0000</span></div><div><strong>メール</strong><a href="mailto:info@sato-clinic-test.jp">info@sato-clinic-test.jp</a></div></div>
+          </section>
+        </div>
       </div>
     </main>
-    <footer class="site-footer compact-footer"><div class="footer-inner"><div class="footer-logo"><img src="./img/Logo/logo.png" alt="佐藤医院 Sato Clinic" /></div><address class="footer-contact"><ul><li>電話番号：<a href="tel:0000000000">00-0000-0000</a></li><li>FAX：00-0000-0000</li><li>メール：<a href="mailto:info@sato-clinic-test.jp">info@sato-clinic-test.jp</a></li></ul></address><nav class="footer-nav" aria-label="フッターナビゲーション"><ul><li><a href="./news.html">お知らせ</a></li><li><a href="./medical.html">診療内容</a></li><li><a href="./about.html">当院について</a></li><li><a href="./faq.html">よくあるご質問</a></li></ul></nav><p class="copyright">&copy; Sato Clinic All Rights Reserved.</p></div></footer>
+
+    <footer class="site-footer"><div class="container footer-main">
+      <div class="footer-brand"><img class="footer-logo" src="./img/Logo/logo.png" alt="佐藤医院 Sato Clinic" /><address class="footer-contact">〒123-4567　東京都台東区上野0-0-0<br />電話：<a href="tel:0000000000">00-0000-0000</a><br />FAX：00-0000-0000<br />メール：<a href="mailto:info@sato-clinic-test.jp">info@sato-clinic-test.jp</a></address></div>
+      <nav class="footer-nav" aria-label="フッターナビゲーション"><h2>サイト案内</h2><ul><li><a href="./index.html">トップページ</a></li><li><a href="./news.html">お知らせ</a></li><li><a href="./medical.html">診療内容</a></li><li><a href="./about.html">当院について</a></li><li><a href="./access.html">診療時間・所在地</a></li><li><a href="./faq.html">よくあるご質問</a></li></ul></nav>
+      <div class="footer-info"><h2>診療案内</h2><ul><li>午前　9:00〜12:00</li><li>午後　13:00〜18:00</li><li>休診日：木曜・土曜午後・日曜</li></ul></div>
+    </div><p class="footer-bottom">&copy; Sato Clinic All Rights Reserved.</p></footer>
     <script src="./js/main.js"></script>
   </body>
 </html>

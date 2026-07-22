@@ -1,99 +1,115 @@
 (function () {
   "use strict";
 
-  const formatDate = (date) => String(date).replace(/-/g, ".");
   const newsItems = Array.isArray(window.SATO_NEWS) ? window.SATO_NEWS : [];
+  const formatDate = (value) => String(value).replaceAll("-", ".");
 
   const toggle = document.querySelector(".nav-toggle");
   const nav = document.querySelector(".global-nav");
 
   if (toggle && nav) {
-    const closeNav = () => {
+    const closeNavigation = (restoreFocus = false) => {
       toggle.setAttribute("aria-expanded", "false");
       toggle.setAttribute("aria-label", "メニューを開く");
       nav.classList.remove("is-open");
       document.body.classList.remove("nav-open");
+      if (restoreFocus) toggle.focus();
     };
 
     toggle.addEventListener("click", () => {
-      const isOpen = toggle.getAttribute("aria-expanded") === "true";
-      toggle.setAttribute("aria-expanded", String(!isOpen));
-      toggle.setAttribute("aria-label", isOpen ? "メニューを開く" : "メニューを閉じる");
-      nav.classList.toggle("is-open", !isOpen);
-      document.body.classList.toggle("nav-open", !isOpen);
+      const willOpen = toggle.getAttribute("aria-expanded") !== "true";
+      toggle.setAttribute("aria-expanded", String(willOpen));
+      toggle.setAttribute("aria-label", willOpen ? "メニューを閉じる" : "メニューを開く");
+      nav.classList.toggle("is-open", willOpen);
+      document.body.classList.toggle("nav-open", willOpen);
     });
 
-    nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeNav));
+    nav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => closeNavigation());
+    });
+
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
-        closeNav();
-        toggle.focus();
+      if (event.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
+        closeNavigation(true);
       }
     });
 
-    const mobileNavigation = window.matchMedia("(max-width: 1050px)");
-    mobileNavigation.addEventListener("change", (event) => {
-      if (!event.matches) {
-        closeNav();
+    document.addEventListener("click", (event) => {
+      if (
+        toggle.getAttribute("aria-expanded") === "true" &&
+        !nav.contains(event.target) &&
+        !toggle.contains(event.target)
+      ) {
+        closeNavigation();
       }
+    });
+
+    const desktopNavigation = window.matchMedia("(min-width: 1081px)");
+    desktopNavigation.addEventListener("change", (event) => {
+      if (event.matches) closeNavigation();
     });
   }
 
-  const topNewsList = document.querySelector("[data-news-list]");
-  if (topNewsList && newsItems.length) {
-    topNewsList.replaceChildren(
-      ...newsItems.slice(0, 5).map((item) => {
-        const row = document.createElement("li");
-        const time = document.createElement("time");
-        const link = document.createElement("a");
-        time.dateTime = item.date;
-        time.textContent = formatDate(item.date);
-        link.href = `./news.html?id=${encodeURIComponent(item.id)}`;
-        link.textContent = item.title;
-        row.append(time, link);
-        return row;
-      }),
-    );
+  const createNewsRow = (item) => {
+    const row = document.createElement("li");
+    const time = document.createElement("time");
+    const link = document.createElement("a");
+
+    time.dateTime = item.date;
+    time.textContent = formatDate(item.date);
+    link.href = `./news.html?id=${encodeURIComponent(item.id)}`;
+    link.textContent = item.title;
+    row.append(time, link);
+    return row;
+  };
+
+  const topNews = document.querySelector("[data-top-news]");
+  if (topNews && newsItems.length > 0) {
+    topNews.replaceChildren(...newsItems.slice(0, 5).map(createNewsRow));
   }
 
   const newsPage = document.querySelector("[data-news-page]");
   if (newsPage) {
-    const id = new URLSearchParams(window.location.search).get("id");
-    const selected = newsItems.find((item) => item.id === id);
+    const selectedId = new URLSearchParams(window.location.search).get("id");
+    const selectedItem = newsItems.find((item) => item.id === selectedId);
 
-    if (selected) {
-      document.title = `${selected.title} | 佐藤医院`;
+    if (selectedItem) {
+      document.title = `${selectedItem.title} | 佐藤医院`;
+
       const article = document.createElement("article");
-      article.className = "news-article";
       const time = document.createElement("time");
-      const title = document.createElement("h1");
-      time.dateTime = selected.date;
-      time.textContent = formatDate(selected.date);
-      title.textContent = selected.title;
-      article.append(time, title);
-      selected.body.forEach((paragraph) => {
-        const p = document.createElement("p");
-        p.textContent = paragraph;
-        article.append(p);
-      });
+      const heading = document.createElement("h2");
+      const body = document.createElement("div");
       const back = document.createElement("p");
+      const backLink = document.createElement("a");
+
+      article.className = "news-article";
+      article.dataset.newsDetail = "";
+      time.dateTime = selectedItem.date;
+      time.textContent = formatDate(selectedItem.date);
+      time.dataset.newsDate = "";
+      heading.textContent = selectedItem.title;
+      heading.dataset.newsTitle = "";
+      body.dataset.newsBody = "";
+      article.append(time, heading, body);
+
+      selectedItem.body.forEach((paragraph) => {
+        const text = document.createElement("p");
+        text.textContent = paragraph;
+        body.append(text);
+      });
+
       back.className = "page-back-link";
-      back.innerHTML = '<a href="./news.html">お知らせ一覧へ戻る</a>';
+      backLink.className = "button button--light";
+      backLink.href = "./news.html";
+      backLink.textContent = "お知らせ一覧へ戻る";
+      back.append(backLink);
       newsPage.replaceChildren(article, back);
-    } else {
+    } else if (newsItems.length > 0) {
       const list = document.createElement("ul");
       list.className = "news-archive";
-      newsItems.forEach((item) => {
-        const row = document.createElement("li");
-        const time = document.createElement("time");
-        const link = document.createElement("a");
-        time.dateTime = item.date;
-        time.textContent = formatDate(item.date);
-        link.href = `./news.html?id=${encodeURIComponent(item.id)}`;
-        link.textContent = item.title;
-        row.append(time, link);
-        list.append(row);
-      });
+      list.dataset.newsList = "";
+      list.append(...newsItems.map(createNewsRow));
       newsPage.replaceChildren(list);
     }
   }
