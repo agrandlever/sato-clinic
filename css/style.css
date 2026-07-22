@@ -138,8 +138,9 @@ body {
 
 .site-logo {
   display: block;
+  flex: 0 0 143px;
   width: 143px;
-  margin-right: 140px;
+  margin-right: 72px;
 }
 
 .site-logo img {
@@ -147,9 +148,15 @@ body {
   height: auto;
 }
 
+.global-nav {
+  flex: 1;
+  min-width: 0;
+}
+
 .global-nav ul {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 24px;
 }
 
@@ -169,11 +176,12 @@ body {
 
 .header-contact {
   display: inline-flex;
+  flex: 0 0 168px;
   align-items: center;
   justify-content: center;
   width: 168px;
   height: 48px;
-  margin-left: auto;
+  margin-left: 72px;
   border-radius: 999px;
   background: var(--color-main-text);
   color: #ffffff;
@@ -684,8 +692,8 @@ body {
 
 .footer-inner {
   display: grid;
-  grid-template-columns: 175px 320px 210px 1fr;
-  gap: 68px;
+  grid-template-columns: 175px 320px 260px 1fr;
+  gap: 52px;
   align-items: center;
   width: min(var(--content-width), calc(100% - 48px));
   height: 194px;
@@ -723,13 +731,18 @@ body {
 
 .footer-nav ul {
   display: grid;
-  grid-template-columns: repeat(2, auto);
-  column-gap: 48px;
+  grid-template-columns: repeat(2, max-content);
+  justify-content: space-between;
+  column-gap: 32px;
   row-gap: 2px;
   color: #ffffff;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.6;
+}
+
+.footer-nav a {
+  white-space: nowrap;
 }
 
 .copyright {
@@ -1114,6 +1127,12 @@ button:focus-visible,
   font-size: 14px;
 }
 
+.hours-note .hours-legend {
+  margin: 0 0 10px;
+  color: inherit;
+  font-weight: 700;
+}
+
 .access-contact .detail-list {
   display: inline-block;
   text-align: left;
@@ -1175,9 +1194,18 @@ button:focus-visible,
   text-align: center;
 }
 
+.faq-contact {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.faq-contact-phone {
+  display: none;
+}
+
 @media (max-width: 1199px) {
   .site-logo {
-    margin-right: 48px;
+    margin-right: 40px;
   }
 
   .global-nav ul {
@@ -1189,7 +1217,9 @@ button:focus-visible,
   }
 
   .header-contact {
+    flex-basis: 145px;
     width: 145px;
+    margin-left: 40px;
     font-size: 16px;
   }
 
@@ -1253,7 +1283,7 @@ button:focus-visible,
 
   .footer-inner {
     width: min(var(--content-width), calc(100% - 48px));
-    grid-template-columns: 150px 260px 180px 1fr;
+    grid-template-columns: 150px 260px 230px 1fr;
     gap: 32px;
   }
 }
@@ -1337,6 +1367,7 @@ button:focus-visible,
 
   .global-nav ul {
     display: grid;
+    justify-content: stretch;
     gap: 0;
   }
 
@@ -1350,6 +1381,7 @@ button:focus-visible,
 
   .header-contact {
     order: 2;
+    flex-basis: 108px;
     width: 108px;
     height: 38px;
     margin-left: auto;
@@ -1384,6 +1416,14 @@ button:focus-visible,
     font-size: 26px;
   }
 
+  .faq-contact-mail {
+    display: none;
+  }
+
+  .faq-contact-phone {
+    display: inline-flex;
+  }
+
   .site-header,
   .subpage-header {
     position: absolute;
@@ -1395,6 +1435,7 @@ button:focus-visible,
   }
 
   .site-logo {
+    flex-basis: 112px;
     width: 112px;
   }
 
@@ -1627,6 +1668,7 @@ button:focus-visible,
 
   .footer-nav ul {
     grid-template-columns: repeat(2, 1fr);
+    justify-content: stretch;
     gap: 8px 24px;
   }
 
