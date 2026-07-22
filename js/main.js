@@ -30,6 +30,13 @@
         toggle.focus();
       }
     });
+
+    const mobileNavigation = window.matchMedia("(max-width: 1050px)");
+    mobileNavigation.addEventListener("change", (event) => {
+      if (!event.matches) {
+        closeNav();
+      }
+    });
   }
 
   const topNewsList = document.querySelector("[data-news-list]");

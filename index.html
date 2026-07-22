@@ -66,7 +66,12 @@
             <h2>診療時間</h2>
             <p>medical-hours</p>
           </div>
-          <div class="hours-table-scroll" tabindex="0" aria-label="診療時間表">
+          <div
+            class="hours-table-scroll"
+            tabindex="0"
+            aria-label="診療時間表"
+            aria-describedby="top-hours-legend"
+          >
           <table class="hours-table">
             <thead>
               <tr>
@@ -82,28 +87,29 @@
             </thead>
             <tbody>
               <tr>
-                <th scope="row">9:00 - 12:00</th>
-                <td>○</td>
-                <td>○</td>
-                <td>○</td>
-                <td>×</td>
-                <td>○</td>
-                <td>○</td>
-                <td>×</td>
+                <th scope="row">午前　9:00〜12:00</th>
+                <td>●</td>
+                <td>●</td>
+                <td>●</td>
+                <td>／</td>
+                <td>●</td>
+                <td>●</td>
+                <td>／</td>
               </tr>
               <tr>
-                <th scope="row">13:00 - 18:00</th>
-                <td>○</td>
-                <td>○</td>
-                <td>○</td>
-                <td>×</td>
-                <td>○</td>
-                <td>×</td>
-                <td>×</td>
+                <th scope="row">午後　13:00〜18:00</th>
+                <td>●</td>
+                <td>●</td>
+                <td>●</td>
+                <td>／</td>
+                <td>●</td>
+                <td>／</td>
+                <td>／</td>
               </tr>
             </tbody>
           </table>
           </div>
+          <p class="hours-legend" id="top-hours-legend">●＝診療　／＝休診</p>
           <div class="hours-note">
             <ul>
               <li>受付時間：午前　8:00〜11:00　／　午後　12:00〜17:00</li>
@@ -437,7 +443,9 @@
             <address class="access-card">
               <h3>佐藤医院</h3>
               <p>〒123-4567<br />東京都台東区上野0-0-0</p>
-              <p><strong>TEL：00-0000-0000</strong></p>
+              <p>
+                <strong>TEL：<a class="contact-link" href="tel:0000000000">00-0000-0000</a></strong>
+              </p>
               <p>
                 最寄駅：JR上野駅より徒歩5分<br />当院専用の無料駐車場 10台分あり
               </p>
@@ -461,9 +469,9 @@
         </div>
         <address class="footer-contact">
           <ul>
-            <li>電話番号：00-0000-0000</li>
+            <li>電話番号：<a href="tel:0000000000">00-0000-0000</a></li>
             <li>FAX：00-0000-0000</li>
-            <li>メール：info@sato-clinic-test.jp</li>
+            <li>メール：<a href="mailto:info@sato-clinic-test.jp">info@sato-clinic-test.jp</a></li>
           </ul>
         </address>
         <nav class="footer-nav" aria-label="フッターナビゲーション">
