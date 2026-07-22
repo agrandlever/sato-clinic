@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  const formatDate = () => "YYYY.MM.DD";
+  const formatDate = (date) => String(date).replace(/-/g, ".");
   const newsItems = Array.isArray(window.SATO_NEWS) ? window.SATO_NEWS : [];
 
   const toggle = document.querySelector(".nav-toggle");
